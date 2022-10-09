@@ -51,38 +51,41 @@ public class Main {
         }
     }
 
-    private static int countMines(int[][] mineField, int i, int j) {
+    private static int countMines(int[][] theField, int theRow, int theCol) {
         int count = 0;
-        if (i > 0 && j > 0 && mineField[i - 1][j - 1] == 1) {
+        int fMine = 1;
+        int row = theField.length;
+        int col = theField[0].length;
+        if (theRow - 1 >= 0 && theCol - 1 >= 0 && theField[theRow - 1][theCol - 1] == fMine) {
             count++;
         }
-        if (i > 0 && mineField[i - 1][j] == 1) {
+        if (theRow - 1 >= 0 && theField[theRow - 1][theCol] == fMine) {
             count++;
         }
-        if (i > 0 && j < mineField[0].length - 1 && mineField[i - 1][j + 1] == 1) {
+        if (theRow - 1 >= 0 && theCol + 1 < col && theField[theRow - 1][theCol + 1] == fMine) {
             count++;
         }
-        if (j > 0 && mineField[i][j - 1] == 1) {
+        if (theCol - 1 >= 0 && theField[theRow][theCol - 1] == fMine) {
             count++;
         }
-        if (j < mineField[0].length - 1 && mineField[i][j + 1] == 1) {
+        if (theCol + 1 < col && theField[theRow][theCol + 1] == fMine) {
             count++;
         }
-        if (i < mineField.length - 1 && j > 0 && mineField[i + 1][j - 1] == 1) {
+        if (theRow + 1 < row && theCol - 1 >= 0 && theField[theRow + 1][theCol - 1] == fMine) {
             count++;
         }
-        if (i < mineField.length - 1 && mineField[i + 1][j] == 1) {
+        if (theRow + 1 < row && theField[theRow + 1][theCol] == fMine) {
             count++;
         }
-        if (i < mineField.length - 1 && j < mineField[0].length - 1 && mineField[i + 1][j + 1] == 1) {
+        if (theRow + 1 < row && theCol + 1 < col && theField[theRow + 1][theCol + 1] == fMine) {
             count++;
         }
         return count;
     }
 
-    private static void printMineField(int[][] mineField) {
-        for (int[] ints : mineField) {
-            for (int j = 0; j < mineField[0].length; j++) {
+    private static void printMineField(int[][] theField) {
+        for (int[] ints : theField) {
+            for (int j = 0; j < theField[0].length; j++) {
                 System.out.print(ints[j]);
             }
             System.out.println();
