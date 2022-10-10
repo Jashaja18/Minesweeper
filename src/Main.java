@@ -4,8 +4,6 @@
  * Assignment 1: Minesweeper
  */
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -16,8 +14,8 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("minesweeper_input.txt"));
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
         minesweeper(input);
     }
 
