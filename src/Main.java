@@ -37,6 +37,7 @@ public class Main {
                     board[i][j] = line.charAt(j);
                 }
             }
+            // this will print the board
             printMineField(board, fMine);
             row = theScan.nextInt();
             col = theScan.nextInt();
@@ -78,6 +79,7 @@ public class Main {
                 }
             }
         }
+        // this will print the minefield with the numbers
         for(int i = 0; i < theField.length; i++) {
             for(int j = 0; j < theField[0].length; j++) {
                 if(theField[i][j] == '*') {
